@@ -139,8 +139,6 @@ Planned, not promised. Order and timing change with other work.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the [MIT License](LICENSE).
 
-Author: Jijesh Puliyappottammal. [GitHub](https://github.com/pJijesh), [LinkedIn](https://www.linkedin.com/in/pjijesh).
-
 ## Author
 
 Built by Jijesh Puliyappottammal, an IT manager. [LinkedIn](https://www.linkedin.com/in/pjijesh) | [GitHub](https://github.com/pJijesh)
