@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local output and secrets that must never be committed
+*.log
+*.pfx
+*.p12
+*.pem
+*.key
+*.p7m
+.env
+.env.*
+readiness*.json
+node_modules/

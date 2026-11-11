@@ -1,0 +1,19 @@
+{
+  "@odata.type": "#microsoft.graph.macOSCompliancePolicy",
+  "displayName": "My laptop policy",
+  "description": "Synthetic fixture.",
+  "passwordRequired": true,
+  "storageRequireEncryption": true,
+  "firewallEnabled": true,
+  "scheduledActionsForRule": [
+    {
+      "ruleName": "PasswordRequired",
+      "scheduledActionConfigurations": [
+        {
+          "actionType": "block",
+          "gracePeriodHours": 0
+        }
+      ]
+    }
+  ]
+}

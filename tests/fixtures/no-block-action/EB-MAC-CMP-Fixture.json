@@ -1,0 +1,8 @@
+{
+  "@odata.type": "#microsoft.graph.macOSCompliancePolicy",
+  "displayName": "EB-MAC-CMP-Fixture",
+  "description": "Synthetic fixture.",
+  "passwordRequired": true,
+  "storageRequireEncryption": true,
+  "firewallEnabled": true
+}

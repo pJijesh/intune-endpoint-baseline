@@ -1,0 +1,17 @@
+{
+  "@odata.type": "#microsoft.graph.windowsUpdateForBusinessConfiguration",
+  "displayName": "EB-WIN-UPD-Ring2-Broad",
+  "description": "Windows quality update ring 2 (broad): 7 day deferral, 3 day deadline, 2 day grace, so install and restart complete within 12 days of release for a device that is online. Part of intune-endpoint-baseline.",
+  "automaticUpdateMode": "autoInstallAtMaintenanceTime",
+  "microsoftUpdateServiceAllowed": true,
+  "driversExcluded": false,
+  "qualityUpdatesDeferralPeriodInDays": 7,
+  "featureUpdatesDeferralPeriodInDays": 0,
+  "deadlineForQualityUpdatesInDays": 3,
+  "deadlineForFeatureUpdatesInDays": 7,
+  "deadlineGracePeriodInDays": 2,
+  "postponeRebootUntilAfterDeadline": false,
+  "userPauseAccess": "disabled",
+  "userWindowsUpdateScanAccess": "enabled",
+  "updateNotificationLevel": "defaultNotifications"
+}

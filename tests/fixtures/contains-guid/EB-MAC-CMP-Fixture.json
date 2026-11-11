@@ -1,0 +1,19 @@
+{
+  "@odata.type": "#microsoft.graph.macOSCompliancePolicy",
+  "displayName": "EB-MAC-CMP-Fixture",
+  "description": "Scoped to 3f2b8c1e-9d4a-4e7b-8a6f-123456789abc",
+  "passwordRequired": true,
+  "storageRequireEncryption": true,
+  "firewallEnabled": true,
+  "scheduledActionsForRule": [
+    {
+      "ruleName": "PasswordRequired",
+      "scheduledActionConfigurations": [
+        {
+          "actionType": "block",
+          "gracePeriodHours": 0
+        }
+      ]
+    }
+  ]
+}

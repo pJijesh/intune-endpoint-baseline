@@ -1,0 +1,17 @@
+{
+  "@odata.type": "#microsoft.graph.windowsUpdateForBusinessConfiguration",
+  "displayName": "EB-WIN-UPD-Ring0-Pilot",
+  "description": "Windows quality update ring 0 (pilot): no deferral, 2 day deadline, 1 day grace. Feature updates are controlled by a separate feature update policy, see policies/specs. Part of intune-endpoint-baseline.",
+  "automaticUpdateMode": "autoInstallAtMaintenanceTime",
+  "microsoftUpdateServiceAllowed": true,
+  "driversExcluded": false,
+  "qualityUpdatesDeferralPeriodInDays": 0,
+  "featureUpdatesDeferralPeriodInDays": 0,
+  "deadlineForQualityUpdatesInDays": 2,
+  "deadlineForFeatureUpdatesInDays": 5,
+  "deadlineGracePeriodInDays": 1,
+  "postponeRebootUntilAfterDeadline": false,
+  "userPauseAccess": "disabled",
+  "userWindowsUpdateScanAccess": "enabled",
+  "updateNotificationLevel": "defaultNotifications"
+}

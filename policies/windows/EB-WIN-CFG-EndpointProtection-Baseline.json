@@ -1,0 +1,29 @@
+{
+  "@odata.type": "#microsoft.graph.windows10EndpointProtectionConfiguration",
+  "displayName": "EB-WIN-CFG-EndpointProtection-Baseline",
+  "description": "Windows Defender Firewall on for domain, private and public profiles with inbound connections blocked by default, BitLocker device encryption required, SmartScreen overrides blocked. Silent encryption and recovery key escrow are specified separately in policies/specs. Part of intune-endpoint-baseline.",
+  "bitLockerEncryptDevice": true,
+  "firewallProfileDomain": {
+    "@odata.type": "microsoft.graph.windowsFirewallNetworkProfile",
+    "firewallEnabled": "allowed",
+    "inboundConnectionsBlocked": true,
+    "outboundConnectionsBlocked": false,
+    "incomingTrafficBlocked": false
+  },
+  "firewallProfilePrivate": {
+    "@odata.type": "microsoft.graph.windowsFirewallNetworkProfile",
+    "firewallEnabled": "allowed",
+    "inboundConnectionsBlocked": true,
+    "outboundConnectionsBlocked": false,
+    "incomingTrafficBlocked": false
+  },
+  "firewallProfilePublic": {
+    "@odata.type": "microsoft.graph.windowsFirewallNetworkProfile",
+    "firewallEnabled": "allowed",
+    "inboundConnectionsBlocked": true,
+    "outboundConnectionsBlocked": false,
+    "incomingTrafficBlocked": false
+  },
+  "smartScreenEnableInShell": true,
+  "smartScreenBlockOverrideForFiles": true
+}

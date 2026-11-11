@@ -1,0 +1,16 @@
+{
+  "@odata.type": "#microsoft.graph.windows10GeneralConfiguration",
+  "displayName": "EB-WIN-CFG-Defender-Baseline",
+  "description": "Microsoft Defender Antivirus settings only: real-time, behaviour monitoring, network inspection, download scanning, cloud block level high, daily quick scan, signature checks every 8 hours. Uses the legacy device restrictions template; see policies/specs for the settings catalog equivalent. Part of intune-endpoint-baseline.",
+  "defenderRequireRealTimeMonitoring": true,
+  "defenderRequireBehaviorMonitoring": true,
+  "defenderRequireNetworkInspectionSystem": true,
+  "defenderScanDownloads": true,
+  "defenderMonitorFileActivity": "monitorAllFiles",
+  "defenderCloudBlockLevel": "high",
+  "defenderScanType": "quick",
+  "defenderSystemScanSchedule": "everyday",
+  "defenderSignatureUpdateIntervalInHours": 8,
+  "defenderDaysBeforeDeletingQuarantinedMalware": 30,
+  "defenderPromptForSampleSubmission": "promptBeforeSendingPersonalData"
+}

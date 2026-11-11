@@ -1,0 +1,152 @@
+{
+  "$comment": "Property names transcribed from Microsoft Learn Graph reference pages (windows10CompliancePolicy beta, macOSCompliancePolicy v1.0, windowsUpdateForBusinessConfiguration v1.0, windows10EndpointProtectionConfiguration v1.0, windows10GeneralConfiguration v1.0 defender and password sections, macOSEndpointProtectionConfiguration beta). Used by tests to catch invented or misspelt property names. A property being absent here does not prove it is invalid, only that it has not been verified by this repository; extend the list after checking Learn.",
+  "common": ["@odata.type", "displayName", "description", "roleScopeTagIds"],
+  "types": {
+    "#microsoft.graph.windows10CompliancePolicy": {
+      "graphVersion": "beta",
+      "properties": [
+        "passwordRequired", "passwordBlockSimple", "passwordRequiredToUnlockFromIdle",
+        "passwordMinutesOfInactivityBeforeLock", "passwordExpirationDays", "passwordMinimumLength",
+        "passwordMinimumCharacterSetCount", "passwordRequiredType", "passwordPreviousPasswordBlockCount",
+        "requireHealthyDeviceReport", "osMinimumVersion", "osMaximumVersion", "mobileOsMinimumVersion",
+        "mobileOsMaximumVersion", "earlyLaunchAntiMalwareDriverEnabled", "bitLockerEnabled",
+        "secureBootEnabled", "codeIntegrityEnabled", "memoryIntegrityEnabled", "kernelDmaProtectionEnabled",
+        "virtualizationBasedSecurityEnabled", "firmwareProtectionEnabled", "storageRequireEncryption",
+        "activeFirewallRequired", "defenderEnabled", "defenderVersion", "signatureOutOfDate", "rtpEnabled",
+        "antivirusRequired", "antiSpywareRequired", "validOperatingSystemBuildRanges",
+        "deviceThreatProtectionEnabled", "deviceThreatProtectionRequiredSecurityLevel",
+        "configurationManagerComplianceRequired", "tpmRequired", "deviceCompliancePolicyScript",
+        "wslDistributions", "scheduledActionsForRule"
+      ],
+      "enums": {
+        "passwordRequiredType": ["deviceDefault", "alphanumeric", "numeric"],
+        "deviceThreatProtectionRequiredSecurityLevel": ["unavailable", "secured", "low", "medium", "high", "notSet"]
+      }
+    },
+    "#microsoft.graph.macOSCompliancePolicy": {
+      "graphVersion": "v1.0",
+      "properties": [
+        "passwordRequired", "passwordBlockSimple", "passwordExpirationDays", "passwordMinimumLength",
+        "passwordMinutesOfInactivityBeforeLock", "passwordPreviousPasswordBlockCount",
+        "passwordMinimumCharacterSetCount", "passwordRequiredType", "osMinimumVersion", "osMaximumVersion",
+        "systemIntegrityProtectionEnabled", "deviceThreatProtectionEnabled",
+        "deviceThreatProtectionRequiredSecurityLevel", "storageRequireEncryption", "firewallEnabled",
+        "firewallBlockAllIncoming", "firewallEnableStealthMode", "scheduledActionsForRule"
+      ],
+      "enums": {
+        "passwordRequiredType": ["deviceDefault", "alphanumeric", "numeric"],
+        "deviceThreatProtectionRequiredSecurityLevel": ["unavailable", "secured", "low", "medium", "high", "notSet"]
+      },
+      "ranges": {
+        "passwordMinimumLength": [4, 14],
+        "passwordExpirationDays": [1, 65535],
+        "passwordPreviousPasswordBlockCount": [1, 24]
+      }
+    },
+    "#microsoft.graph.windowsUpdateForBusinessConfiguration": {
+      "graphVersion": "v1.0",
+      "properties": [
+        "deliveryOptimizationMode", "prereleaseFeatures", "automaticUpdateMode", "microsoftUpdateServiceAllowed",
+        "driversExcluded", "installationSchedule", "qualityUpdatesDeferralPeriodInDays",
+        "featureUpdatesDeferralPeriodInDays", "qualityUpdatesPaused", "featureUpdatesPaused",
+        "businessReadyUpdatesOnly", "skipChecksBeforeRestart", "updateWeeks",
+        "featureUpdatesRollbackWindowInDays", "engagedRestartDeadlineInDays", "engagedRestartSnoozeScheduleInDays",
+        "engagedRestartTransitionScheduleInDays", "deadlineForFeatureUpdatesInDays",
+        "deadlineForQualityUpdatesInDays", "deadlineGracePeriodInDays", "postponeRebootUntilAfterDeadline",
+        "autoRestartNotificationDismissal", "scheduleRestartWarningInHours",
+        "scheduleImminentRestartWarningInMinutes", "userPauseAccess", "userWindowsUpdateScanAccess",
+        "updateNotificationLevel", "allowWindows11Upgrade"
+      ],
+      "enums": {
+        "automaticUpdateMode": ["userDefined", "notifyDownload", "autoInstallAtMaintenanceTime", "autoInstallAndRebootAtMaintenanceTime", "autoInstallAndRebootAtScheduledTime", "autoInstallAndRebootWithoutEndUserControl", "windowsDefault"],
+        "updateNotificationLevel": ["notConfigured", "defaultNotifications", "restartWarningsOnly", "disableAllNotifications"],
+        "userPauseAccess": ["notConfigured", "enabled", "disabled"],
+        "userWindowsUpdateScanAccess": ["notConfigured", "enabled", "disabled"]
+      },
+      "ranges": {
+        "qualityUpdatesDeferralPeriodInDays": [0, 30],
+        "featureUpdatesDeferralPeriodInDays": [0, 30],
+        "deadlineForFeatureUpdatesInDays": [0, 30],
+        "deadlineForQualityUpdatesInDays": [0, 30],
+        "deadlineGracePeriodInDays": [0, 7]
+      }
+    },
+    "#microsoft.graph.windows10EndpointProtectionConfiguration": {
+      "graphVersion": "v1.0",
+      "properties": [
+        "applicationGuardEnabled", "applicationGuardBlockFileTransfer", "applicationGuardBlockNonEnterpriseContent",
+        "applicationGuardAllowPersistence", "applicationGuardForceAuditing", "applicationGuardBlockClipboardSharing",
+        "applicationGuardAllowPrintToPDF", "applicationGuardAllowPrintToXPS", "applicationGuardAllowPrintToLocalPrinters",
+        "applicationGuardAllowPrintToNetworkPrinters", "appLockerApplicationControl",
+        "bitLockerDisableWarningForOtherDiskEncryption", "bitLockerEnableStorageCardEncryptionOnMobile",
+        "bitLockerEncryptDevice", "bitLockerRemovableDrivePolicy", "defenderAttackSurfaceReductionExcludedPaths",
+        "defenderGuardedFoldersAllowedAppPaths", "defenderAdditionalGuardedFolders", "defenderExploitProtectionXml",
+        "defenderExploitProtectionXmlFileName", "defenderSecurityCenterBlockExploitProtectionOverride",
+        "firewallBlockStatefulFTP", "firewallIdleTimeoutForSecurityAssociationInSeconds",
+        "firewallPreSharedKeyEncodingMethod", "firewallIPSecExemptionsAllowNeighborDiscovery",
+        "firewallIPSecExemptionsAllowICMP", "firewallIPSecExemptionsAllowRouterDiscovery",
+        "firewallIPSecExemptionsAllowDHCP", "firewallCertificateRevocationListCheckMethod",
+        "firewallMergeKeyingModuleSettings", "firewallPacketQueueingMethod", "firewallProfileDomain",
+        "firewallProfilePublic", "firewallProfilePrivate", "smartScreenEnableInShell", "smartScreenBlockOverrideForFiles"
+      ],
+      "nested": {
+        "windowsFirewallNetworkProfile": {
+          "keys": ["firewallProfileDomain", "firewallProfilePublic", "firewallProfilePrivate"],
+          "properties": [
+            "@odata.type", "firewallEnabled", "stealthModeBlocked", "incomingTrafficBlocked",
+            "unicastResponsesToMulticastBroadcastsBlocked", "inboundNotificationsBlocked",
+            "authorizedApplicationRulesFromGroupPolicyMerged", "globalPortRulesFromGroupPolicyMerged",
+            "connectionSecurityRulesFromGroupPolicyMerged", "outboundConnectionsBlocked",
+            "inboundConnectionsBlocked", "securedPacketExemptionAllowed", "policyRulesFromGroupPolicyMerged"
+          ],
+          "enums": {
+            "firewallEnabled": ["notConfigured", "blocked", "allowed"]
+          }
+        }
+      }
+    },
+    "#microsoft.graph.windows10GeneralConfiguration": {
+      "graphVersion": "v1.0",
+      "properties": [
+        "defenderRequireRealTimeMonitoring", "defenderRequireBehaviorMonitoring",
+        "defenderRequireNetworkInspectionSystem", "defenderScanDownloads",
+        "defenderScanScriptsLoadedInInternetExplorer", "defenderMonitorFileActivity", "defenderCloudBlockLevel",
+        "defenderScheduledScanTime", "defenderScanType", "defenderSignatureUpdateIntervalInHours",
+        "defenderDaysBeforeDeletingQuarantinedMalware", "defenderProcessesToExclude",
+        "defenderFileExtensionsToExclude", "defenderSystemScanSchedule", "defenderDetectedMalwareActions",
+        "defenderPromptForSampleSubmission", "passwordRequired", "passwordMinutesOfInactivityBeforeScreenTimeout",
+        "passwordBlockSimple", "passwordMinimumLength", "passwordSignInFailureCountBeforeFactoryReset"
+      ],
+      "enums": {
+        "defenderMonitorFileActivity": ["userDefined", "disable", "monitorAllFiles", "monitorIncomingFilesOnly", "monitorOutgoingFilesOnly"],
+        "defenderCloudBlockLevel": ["notConfigured", "high", "highPlus", "zeroTolerance"],
+        "defenderScanType": ["userDefined", "disabled", "quick", "full"],
+        "defenderSystemScanSchedule": ["userDefined", "everyday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+        "defenderPromptForSampleSubmission": ["userDefined", "alwaysPrompt", "promptBeforeSendingPersonalData", "neverSendData", "sendAllDataWithoutPrompting"]
+      },
+      "ranges": {
+        "defenderSignatureUpdateIntervalInHours": [0, 24],
+        "defenderDaysBeforeDeletingQuarantinedMalware": [0, 90]
+      }
+    },
+    "#microsoft.graph.macOSEndpointProtectionConfiguration": {
+      "graphVersion": "beta",
+      "properties": [
+        "gatekeeperAllowedAppSource", "gatekeeperBlockOverride", "firewallEnabled", "firewallBlockAllIncoming",
+        "firewallEnableStealthMode", "firewallApplications", "fileVaultEnabled", "fileVaultSelectedRecoveryKeyTypes",
+        "fileVaultInstitutionalRecoveryKeyCertificate", "fileVaultInstitutionalRecoveryKeyCertificateFileName",
+        "fileVaultPersonalRecoveryKeyHelpMessage", "fileVaultAllowDeferralUntilSignOut",
+        "fileVaultNumberOfTimesUserCanIgnore", "fileVaultDisablePromptAtSignOut",
+        "fileVaultPersonalRecoveryKeyRotationInMonths", "fileVaultHidePersonalRecoveryKey",
+        "advancedThreatProtectionRealTime", "advancedThreatProtectionCloudDelivered",
+        "advancedThreatProtectionAutomaticSampleSubmission", "advancedThreatProtectionDiagnosticDataCollection",
+        "advancedThreatProtectionExcludedFolders", "advancedThreatProtectionExcludedFiles",
+        "advancedThreatProtectionExcludedExtensions", "advancedThreatProtectionExcludedProcesses"
+      ],
+      "enums": {
+        "gatekeeperAllowedAppSource": ["notConfigured", "macAppStore", "macAppStoreAndIdentifiedDevelopers", "anywhere"],
+        "fileVaultSelectedRecoveryKeyTypes": ["notConfigured", "institutionalRecoveryKey", "personalRecoveryKey"]
+      }
+    }
+  }
+}

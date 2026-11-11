@@ -1,0 +1,10 @@
+{
+  "policies": [
+    {
+      "file": "EB-MAC-CMP-Fixture.json",
+      "graphVersion": "v2.0",
+      "collection": "deviceManagement/deviceCompliancePolicies",
+      "odataType": "#microsoft.graph.macOSCompliancePolicy"
+    }
+  ]
+}

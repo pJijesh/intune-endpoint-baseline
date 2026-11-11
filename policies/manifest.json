@@ -1,0 +1,14 @@
+{
+  "$comment": "Maps each policy file to the Graph version and collection it targets. Used by Import-IntunePolicies.ps1 and checked by Test-PolicyFiles.ps1.",
+  "namingConvention": "EB-<WIN|MAC>-<CMP|CFG|UPD>-<Name>",
+  "policies": [
+    { "file": "windows/EB-WIN-CMP-Baseline.json", "graphVersion": "beta", "collection": "deviceManagement/deviceCompliancePolicies", "odataType": "#microsoft.graph.windows10CompliancePolicy" },
+    { "file": "macos/EB-MAC-CMP-Baseline.json", "graphVersion": "v1.0", "collection": "deviceManagement/deviceCompliancePolicies", "odataType": "#microsoft.graph.macOSCompliancePolicy" },
+    { "file": "windows/EB-WIN-UPD-Ring0-Pilot.json", "graphVersion": "v1.0", "collection": "deviceManagement/deviceConfigurations", "odataType": "#microsoft.graph.windowsUpdateForBusinessConfiguration" },
+    { "file": "windows/EB-WIN-UPD-Ring1-Early.json", "graphVersion": "v1.0", "collection": "deviceManagement/deviceConfigurations", "odataType": "#microsoft.graph.windowsUpdateForBusinessConfiguration" },
+    { "file": "windows/EB-WIN-UPD-Ring2-Broad.json", "graphVersion": "v1.0", "collection": "deviceManagement/deviceConfigurations", "odataType": "#microsoft.graph.windowsUpdateForBusinessConfiguration" },
+    { "file": "windows/EB-WIN-CFG-EndpointProtection-Baseline.json", "graphVersion": "v1.0", "collection": "deviceManagement/deviceConfigurations", "odataType": "#microsoft.graph.windows10EndpointProtectionConfiguration" },
+    { "file": "windows/EB-WIN-CFG-Defender-Baseline.json", "graphVersion": "v1.0", "collection": "deviceManagement/deviceConfigurations", "odataType": "#microsoft.graph.windows10GeneralConfiguration" },
+    { "file": "macos/EB-MAC-CFG-EndpointProtection-Baseline.json", "graphVersion": "beta", "collection": "deviceManagement/deviceConfigurations", "odataType": "#microsoft.graph.macOSEndpointProtectionConfiguration" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@odata.type": "#microsoft.graph.windows10CompliancePolicy",
+  "displayName": "EB-WIN-CMP-Baseline",
+  "description": "Windows 11 compliance baseline: BitLocker, Secure Boot, TPM, Defender, firewall, screen lock, minimum OS build. Part of intune-endpoint-baseline. Review the OS build value at each Windows feature update.",
+  "passwordRequired": true,
+  "passwordBlockSimple": true,
+  "passwordRequiredToUnlockFromIdle": true,
+  "passwordMinutesOfInactivityBeforeLock": 15,
+  "osMinimumVersion": "10.0.26100.0",
+  "earlyLaunchAntiMalwareDriverEnabled": true,
+  "bitLockerEnabled": true,
+  "secureBootEnabled": true,
+  "codeIntegrityEnabled": true,
+  "storageRequireEncryption": true,
+  "activeFirewallRequired": true,
+  "defenderEnabled": true,
+  "signatureOutOfDate": true,
+  "rtpEnabled": true,
+  "antivirusRequired": true,
+  "antiSpywareRequired": true,
+  "tpmRequired": true,
+  "scheduledActionsForRule": [
+    {
+      "ruleName": "PasswordRequired",
+      "scheduledActionConfigurations": [
+        {
+          "actionType": "block",
+          "gracePeriodHours": 24
+        }
+      ]
+    }
+  ]
+}

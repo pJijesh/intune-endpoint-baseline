@@ -1,0 +1,27 @@
+{
+  "@odata.type": "#microsoft.graph.macOSCompliancePolicy",
+  "displayName": "EB-MAC-CMP-Baseline",
+  "description": "macOS compliance baseline: FileVault, firewall with stealth mode, System Integrity Protection, local password, minimum OS version. Part of intune-endpoint-baseline. Review the OS version value at each major macOS release.",
+  "passwordRequired": true,
+  "passwordBlockSimple": true,
+  "passwordMinimumLength": 12,
+  "passwordMinutesOfInactivityBeforeLock": 15,
+  "passwordRequiredType": "deviceDefault",
+  "osMinimumVersion": "15.0",
+  "systemIntegrityProtectionEnabled": true,
+  "storageRequireEncryption": true,
+  "firewallEnabled": true,
+  "firewallBlockAllIncoming": false,
+  "firewallEnableStealthMode": true,
+  "scheduledActionsForRule": [
+    {
+      "ruleName": "PasswordRequired",
+      "scheduledActionConfigurations": [
+        {
+          "actionType": "block",
+          "gracePeriodHours": 24
+        }
+      ]
+    }
+  ]
+}

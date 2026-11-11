@@ -1,0 +1,16 @@
+{
+  "@odata.type": "#microsoft.graph.macOSEndpointProtectionConfiguration",
+  "displayName": "EB-MAC-CFG-EndpointProtection-Baseline",
+  "description": "macOS FileVault with personal recovery key escrowed to Intune, application firewall with stealth mode, Gatekeeper limited to App Store and identified developers with user override disabled. Part of intune-endpoint-baseline.",
+  "gatekeeperAllowedAppSource": "macAppStoreAndIdentifiedDevelopers",
+  "gatekeeperBlockOverride": true,
+  "firewallEnabled": true,
+  "firewallBlockAllIncoming": false,
+  "firewallEnableStealthMode": true,
+  "fileVaultEnabled": true,
+  "fileVaultSelectedRecoveryKeyTypes": "personalRecoveryKey",
+  "fileVaultPersonalRecoveryKeyHelpMessage": "Contact the IT service desk to retrieve your recovery key.",
+  "fileVaultAllowDeferralUntilSignOut": true,
+  "fileVaultNumberOfTimesUserCanIgnore": 3,
+  "fileVaultDisablePromptAtSignOut": false
+}

@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python-tests:
+    name: JSON validation and test suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install pytest
+      - name: Run tests
+        # The GitHub-hosted Ubuntu image includes PowerShell 7, so the linter and
+        # script tests run as well. They skip themselves if pwsh is missing.
+        run: python -m pytest tests -v
+
+  powershell:
+    name: PowerShell lint, linter and mock import test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module -Name PSScriptAnalyzer -Scope CurrentUser -Force
+      - name: PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          $results = foreach ($path in './scripts', './tests') {
+            Invoke-ScriptAnalyzer -Path $path -Recurse -Severity Warning, Error
+          }
+          $results | Format-Table RuleName, Severity, ScriptName, Line, Message -AutoSize
+          if ($results) { throw "PSScriptAnalyzer reported $(@($results).Count) finding(s)." }
+      - name: Lint policy files
+        shell: pwsh
+        run: ./scripts/Test-PolicyFiles.ps1
+      - name: Import script against a fake Graph
+        shell: pwsh
+        run: ./tests/Invoke-ImportMockTest.ps1
+
+  shell:
+    name: Shell script checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax check
+        run: bash -n scripts/macos-readiness-check.sh
+      - name: ShellCheck
+        run: shellcheck scripts/macos-readiness-check.sh

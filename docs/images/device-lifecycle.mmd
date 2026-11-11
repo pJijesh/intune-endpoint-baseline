@@ -1,0 +1,26 @@
+flowchart TD
+    A[Procure device] --> B{Platform}
+    B -->|Windows 11| C[Register hardware hash in Autopilot]
+    B -->|macOS| D[Assign device to MDM server in Apple Business Manager]
+    C --> E[User powers on and signs in<br/>Autopilot and Enrollment Status Page]
+    D --> F[Setup Assistant<br/>automated device enrolment]
+    E --> G[Enrolled in Intune]
+    F --> G
+    G --> H[Baseline policies apply<br/>encryption, firewall, antivirus, updates, screen lock]
+    H --> I{Compliance evaluation}
+    I -->|Compliant| J[Conditional Access grants access]
+    I -->|Not compliant| K[Grace period and user notification]
+    K --> L{Fixed within grace period?}
+    L -->|Yes| I
+    L -->|No| M[Marked non-compliant<br/>Conditional Access blocks access]
+    M --> N[User or IT remediates]
+    N --> I
+    J --> O[Normal use]
+    O --> P[Monthly quality updates through rings<br/>Ring 0 pilot, Ring 1 early, Ring 2 broad]
+    P --> I
+    O --> Q{Lifecycle event}
+    Q -->|Lost or stolen| R[Lock or wipe, revoke sessions,<br/>rotate credentials]
+    Q -->|Reassign| S[Autopilot reset or macOS erase and re-enrol]
+    Q -->|End of life| T[Retire or wipe, remove records,<br/>dispose with a disposal record]
+    S --> G
+    R --> T
