@@ -13,8 +13,8 @@ jobs:
     name: JSON validation and test suite
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - name: Install test dependencies
@@ -28,7 +28,7 @@ jobs:
     name: PowerShell lint, linter and mock import test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install PSScriptAnalyzer
         shell: pwsh
         run: |
@@ -53,7 +53,7 @@ jobs:
     name: Shell script checks
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Syntax check
         run: bash -n scripts/macos-readiness-check.sh
       - name: ShellCheck
