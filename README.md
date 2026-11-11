@@ -1,5 +1,7 @@
 # intune-endpoint-baseline
 
+![intune-endpoint-baseline: project banner](docs/images/banner.png)
+
 [![CI](https://github.com/pJijesh/intune-endpoint-baseline/actions/workflows/ci.yml/badge.svg)](https://github.com/pJijesh/intune-endpoint-baseline/actions/workflows/ci.yml) [![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE) ![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg) ![PowerShell 7](https://img.shields.io/badge/PowerShell-7%2B-5391FE.svg)
 
 **Problem:** Endpoint security settings for Windows and Mac laptops tend to live in people's heads and in hand-built portal clicks, so they are hard to review, repeat or explain to an auditor.

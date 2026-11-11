@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+title: "intune-endpoint-baseline"
+abstract: "Windows and macOS endpoint security baseline for Microsoft Intune: written standard, policies, safe import script and linter."
+type: software
+authors:
+  - family-names: "Puliyappottammal"
+    given-names: "Jijesh"
+repository-code: "https://github.com/pJijesh/intune-endpoint-baseline"
+url: "https://github.com/pJijesh/intune-endpoint-baseline"
+license: MIT
+version: 1.0.0
+date-released: "2026-11-11"
+keywords:
+  - cyber-essentials
+  - endpoint-management
+  - intune
+  - macos
+  - microsoft-graph
+  - powershell
+  - windows
